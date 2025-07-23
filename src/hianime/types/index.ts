@@ -1,4 +1,5 @@
-import type { HianimeAnime, HianimeSearchFilters } from "./anime"
+import type { HianimeAnime } from "./anime"
+import type { HianimeSearchFilters } from "./search";
 
 export type HianimeSearchResponse = {
   animes: Partial<HianimeAnime>[]

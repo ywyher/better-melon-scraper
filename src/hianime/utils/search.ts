@@ -1,8 +1,9 @@
 import { HIANIME_FILTERS_MAP } from "./filters.mapper";
-import type { HianimeFilterKeys, HianimeAnime, HianimeAnimeEpisodes, HianimeAnimeTitle, HianimeDate, HianimeGenre, HianimeType, HianimeSearchFilters } from "../types/anime";
+import type { HianimeAnime, HianimeAnimeEpisodes, HianimeAnimeTitle, HianimeDate, HianimeGenre, HianimeType } from "../types/anime";
 import type { CheerioAPI } from "cheerio";
 import { hianimeConfig } from "./config";
 import type { HianimeSearchProps } from "../scrapers/search.scraper";
+import type { HianimeFilterKeys, HianimeSearchFilters } from "../types/search";
 
 export function getHianimeSearchDateFilterValue({
     category,

@@ -12,27 +12,6 @@ export type HianimeDate = {
   day: number
 }
 
-export type HanimeSearchQueryParams = Partial<{
-  q: string;
-  page: string;
-  type: HianimeType;
-  status: HianimeStatus;
-  rated: HianimeRated;
-  score: HianimeScore;
-  season: HianimeSeason;
-  language: HianimeLanguage;
-  start_date: HianimeDate;
-  end_date: HianimeDate;
-  sort: HianimeSort;
-  genres: HianimeGenre[];
-}>
-
-export type HianimeSearchFilters = Omit<HanimeSearchQueryParams, "q" | "page">;
-
-export type HianimeFilterKeys = Partial<
-  keyof Omit<HianimeSearchFilters, "start_date" | "end_date">
->;
-
 export type HianimeAnimeTitle = {
   english: string;
   native: string

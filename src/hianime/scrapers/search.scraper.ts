@@ -1,8 +1,8 @@
 import ky from "ky";
 import { extractHianimeAnimes, getHianimeSearchUrl } from "../utils/search";
 import { load } from "cheerio";
-import type { HianimeSearchFilters } from "../types/anime";
 import type { HianimeSearchResponse } from "../types";
+import type { HianimeSearchFilters } from "../types/search";
 
 export type HianimeSearchProps = { 
   q: string, 

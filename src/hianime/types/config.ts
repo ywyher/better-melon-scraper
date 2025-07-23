@@ -1,6 +1,8 @@
 export type HianimeConfig = {
   url: {
     base: string;
-    search: string
+    search: string;
+    watch: string;
+    ajax: string
   }
 }
