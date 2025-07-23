@@ -1,6 +1,7 @@
 import { expect, test } from "bun:test";
 import { hianimeSearch } from "../../src/hianime/scrapers/search.scraper";
 import { getHianimeEpisodes } from "../../src/hianime/scrapers/episodes.scraper";
+import { getHianimeEpisodeServers } from "../../src/hianime/scrapers/servers.scraper";
 
 test("hianime search", async () => {
   const { animes } = await hianimeSearch({
@@ -23,9 +24,15 @@ test("hianime search", async () => {
       },
     },
   })
-  if(!animes?.[0]?.id) return;
-  const episodes = await getHianimeEpisodes({ animeId: animes?.[0]?.id })
+  const animeId = animes?.[0]?.id
+  if(!animeId) return;
+
+  const episodes = await getHianimeEpisodes({ animeId })
+  const episodeId = episodes[0]?.id 
+  if(!episodeId) return;
+  const servers = await getHianimeEpisodeServers({ episodeId })
 
   expect(animes).not.toBeEmpty()
   expect(episodes).not.toBeEmpty()
+  expect(servers).not.toBeEmpty()
 });

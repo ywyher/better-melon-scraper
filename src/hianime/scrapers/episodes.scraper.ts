@@ -14,7 +14,7 @@ export async function getHianimeEpisodes({
 
   try {
     const content: HianimeEpiosdeListApiReponse = await ky.get(
-      `${hianimeConfig.url.ajax}/v2/episode/list/${id}`,
+      `${hianimeConfig.url.ajax}/episode/list/${id}`,
       {
         headers: {
           "X-Requested-With": "XMLHttpRequest",

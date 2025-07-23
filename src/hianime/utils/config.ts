@@ -5,6 +5,6 @@ export const hianimeConfig: HianimeConfig = {
     base: 'https://hianime.to',
     search: 'https://hianime.to/search',
     watch: 'https://hianime.to/watch',
-    ajax: "https://hianime.to/ajax"
+    ajax: "https://hianime.to/ajax/v2"
   }
 }

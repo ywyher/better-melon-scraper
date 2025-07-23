@@ -23,7 +23,7 @@ export type HianimeAnimeEpisodes = {
 }
 
 export type HianimeAnime = {
-  animeId: string;
+  id: string;
   title: HianimeAnimeTitle;
   poster: string;
   duration: string;

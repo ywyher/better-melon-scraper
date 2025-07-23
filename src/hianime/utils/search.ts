@@ -135,7 +135,7 @@ export function extractHianimeAnimes($: CheerioAPI) {
     } as HianimeAnimeEpisodes;
 
     animes.push({
-      animeId,
+      id: animeId,
       title,
       poster,
       duration,
