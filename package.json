@@ -1,0 +1,16 @@
+{
+  "name": "better-melon-scraper",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "ky": "^1.8.2"
+  }
+}
