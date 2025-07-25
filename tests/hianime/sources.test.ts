@@ -1,13 +1,13 @@
+import Hianime from "../../src/hianime";
 import { expect, test } from "bun:test";
-import { getHianimeEpisodeSources } from "../../src/hianime/scrapers/sources.scraper";
-import { getHianimeEpisodeServers } from "../../src/hianime/scrapers/servers.scraper";
 
-test("hianime search", async () => {
+test("hianime anime episode sources", async () => {
+  const hianime = new Hianime()
   const episodeId = 213
-  const servers = await getHianimeEpisodeServers({ episodeId })
+  const servers = await hianime.getEpisodeServers({ episodeId })
   const server = servers.sub[0]
   if(!server) return;
-  const sources = await getHianimeEpisodeSources({ 
+  const sources = await hianime.getEpisodeSources({ 
     episodeId,
     server,
     fallback: true

@@ -1,11 +1,7 @@
-import { load } from "cheerio"
 import ky from "ky"
+import { load } from "cheerio"
 import { hianimeConfig } from "../utils/config"
-import type { HianimeAnimeEpisode, HianimeEpiosdeListApiReponse } from "../types/episodes"
-
-type GetHianimeEpisodesProps = {
-  animeId: string
-}
+import type { GetHianimeEpisodesProps, HianimeAnimeEpisode, HianimeEpiosdeListApiReponse } from "../types/episodes"
 
 export async function getHianimeEpisodes({
   animeId

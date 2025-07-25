@@ -1,4 +1,11 @@
+import type { HianimeAnimeEpisode } from "./episodes";
 import type { HianimeEpisodeServer } from "./servers";
+
+export type GetHianimeEpisodeSourcesProps = {
+  episodeId: HianimeAnimeEpisode['id'];
+  server?: HianimeEpisodeServer;
+  fallback?: boolean;
+}
 
 export type HianimeEpiosdeSourcesApiResponse = {
   type: string;

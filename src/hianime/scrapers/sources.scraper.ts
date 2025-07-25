@@ -1,21 +1,16 @@
 import ky from "ky";
-import type { HianimeAnimeEpisode } from "../types/episodes";
-import type { HianimeEpisodeServer } from "../types/servers";
 import { hianimeConfig } from "../utils/config";
+import { extractHianimeToken } from "../utils/sources.utils";
+import { AES, enc } from "crypto-js";
 import type { 
+  GetHianimeEpisodeSourcesProps,
   HianimeEpiosdeSourcesApiResponse, 
   HianimeEpisodeSources, 
   HianimeGetSourcesApiResponse, 
   HianimeGetSourcesFallbackApiResponse 
 } from "../types/sources";
-import { extractHianimeToken } from "../utils/sources.utils";
-import { AES, enc } from "crypto-js";
-
-type GetHianimeEpisodeSourcesProps = {
-  episodeId: HianimeAnimeEpisode['id'];
-  server?: HianimeEpisodeServer;
-  fallback?: boolean;
-}
+import type { HianimeAnimeEpisode } from "../types/episodes";
+import type { HianimeEpisodeServer } from "../types/servers";
 
 async function getDefaultEpisodeSources(
   episodeId: HianimeAnimeEpisode['id'],

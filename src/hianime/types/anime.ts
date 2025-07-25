@@ -17,16 +17,14 @@ export type HianimeAnimeTitle = {
   native: string
 }
 
-export type HianimeAnimeEpisodes = {
-  sub: number;
-  dub: number;
-}
-
 export type HianimeAnime = {
   id: string;
   title: HianimeAnimeTitle;
   poster: string;
   duration: string;
   type: HianimeType;
-  episodes: HianimeAnimeEpisodes;
+  episodes: {
+    sub: number;
+    dub: number;
+  };
 }

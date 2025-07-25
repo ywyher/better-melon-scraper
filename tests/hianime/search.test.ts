@@ -1,8 +1,9 @@
+import Hianime from "../../src/hianime";
 import { expect, test } from "bun:test";
-import { hianimeSearch } from "../../src/hianime/scrapers/search.scraper";
 
 test("hianime search", async () => {
-  const data = await hianimeSearch({
+  const hianime = new Hianime()
+  const results = await hianime.search({
     q: 'steins;gate',
     filters: {
       status: 'FINISHED_AIRING',
@@ -23,5 +24,5 @@ test("hianime search", async () => {
     },
   })
 
-  expect(data).not.toBeEmpty()
+  expect(results).not.toBeEmpty()
 });

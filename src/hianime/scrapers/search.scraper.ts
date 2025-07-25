@@ -2,13 +2,7 @@ import ky from "ky";
 import { extractHianimeAnimes, getHianimeSearchUrl } from "../utils/search.utils";
 import { load } from "cheerio";
 import type { HianimeSearchResponse } from "../types";
-import type { HianimeSearchFilters } from "../types/search";
-
-export type HianimeSearchProps = { 
-  q: string, 
-  page?: number, 
-  filters?: HianimeSearchFilters
-}
+import type { HianimeSearchProps } from "../types/search";
 
 export async function hianimeSearch({ 
   q,

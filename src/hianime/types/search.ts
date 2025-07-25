@@ -1,5 +1,11 @@
 import type { HianimeDate, HianimeGenre, HianimeLanguage, HianimeRated, HianimeScore, HianimeSeason, HianimeSort, HianimeStatus, HianimeType } from "./anime";
 
+export type HianimeSearchProps = { 
+  q: string, 
+  page?: number, 
+  filters?: HianimeSearchFilters
+}
+
 export type HanimeSearchQueryParams = Partial<{
   q: string;
   page: string;

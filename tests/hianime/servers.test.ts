@@ -1,9 +1,10 @@
+import Hianime from "../../src/hianime";
 import { expect, test } from "bun:test";
-import { getHianimeEpisodeServers } from "../../src/hianime/scrapers/servers.scraper";
 
-test("hianime search", async () => {
+test("hianime anime episode servers", async () => {
+  const hianime = new Hianime()
   const episodeId = 213
-  const servers = await getHianimeEpisodeServers({ episodeId })
+  const servers = await hianime.getEpisodeServers({ episodeId })
 
   expect(servers).not.toBeEmpty()
 });

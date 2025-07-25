@@ -1,9 +1,10 @@
+import Hianime from "../../src/hianime";
 import { expect, test } from "bun:test";
-import { getHianimeEpisodes } from "../../src/hianime/scrapers/episodes.scraper";
 
-test("hianime search", async () => {
+test("hianime anime episodes", async () => {
+  const hianime = new Hianime()
   const animeId = 'steinsgate-3'
-  const episodes = await getHianimeEpisodes({ animeId })
+  const episodes = await hianime.getEpisodes({ animeId })
 
   expect(episodes).not.toBeEmpty()
 });
