@@ -1,31 +1,9 @@
 import { expect, test } from "bun:test";
-import { hianimeSearch } from "../../src/hianime/scrapers/search.scraper";
 import { getHianimeEpisodes } from "../../src/hianime/scrapers/episodes.scraper";
 
 test("hianime search", async () => {
-  const { animes } = await hianimeSearch({
-    q: 'steins;gate',
-    filters: {
-      status: 'FINISHED_AIRING',
-      language: 'SUB',
-      sort: 'MOST_WATCHED',
-      type: 'TV',
-      genres: ["SCI_FI"],
-      start_date: {
-        day: 6,
-        month: 4,
-        year: 2011
-      },
-      end_date: {
-        day: 14,
-        month: 9,
-        year: 2011
-      },
-    },
-  })
-  if(!animes?.[0]?.id) return;
-  const episodes = await getHianimeEpisodes({ animeId: animes?.[0]?.id })
+  const animeId = 'steinsgate-3'
+  const episodes = await getHianimeEpisodes({ animeId })
 
-  expect(animes).not.toBeEmpty()
   expect(episodes).not.toBeEmpty()
 });

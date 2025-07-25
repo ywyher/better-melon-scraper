@@ -5,5 +5,3 @@ const response = await ky.get('https://hianime.to/steinsgate-3');
 const html = await response.text();
 
 const $: CheerioAPI = load(html);
-
-console.log(JSON.parse($('body')?.find("#syncData")?.text())?.anilist_id);

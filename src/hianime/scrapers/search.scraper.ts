@@ -1,5 +1,5 @@
 import ky from "ky";
-import { extractHianimeAnimes, getHianimeSearchUrl } from "../utils/search";
+import { extractHianimeAnimes, getHianimeSearchUrl } from "../utils/search.utils";
 import { load } from "cheerio";
 import type { HianimeSearchResponse } from "../types";
 import type { HianimeSearchFilters } from "../types/search";
@@ -62,7 +62,6 @@ export async function hianimeSearch({
 
     return response;
   } catch (error) {
-    console.log(error)
     throw error;
   }
 }

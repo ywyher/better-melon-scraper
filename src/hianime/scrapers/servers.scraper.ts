@@ -1,7 +1,7 @@
 import ky from "ky";
 import type { HianimeAnimeEpisode } from "../types/episodes";
 import { hianimeConfig } from "../utils/config";
-import type { HianimeEpiosdeServersApiReponse, HianimeEpisodeServer } from "../types/servers";
+import type { HianimeEpiosdeServersApiReponse, HianimeEpisodeServer, HianimeServerName } from "../types/servers";
 import { load } from "cheerio";
 
 type GetEpisodeServersProps = {
@@ -31,7 +31,8 @@ export async function getHianimeEpisodeServers({
       (_, item) => {
         servers.sub.push({
           id: Number($(item)?.attr("data-server-id")?.trim()) || null,
-          name: $(item).find("a").text().toLowerCase().trim(),
+          dataId: Number($(item).attr("data-id")) || null, // will be used to get the streaming links later
+          name: $(item).find("a").text().toLowerCase().trim() as HianimeServerName,
         });
       }
   );
@@ -40,7 +41,8 @@ export async function getHianimeEpisodeServers({
     (_, item) => {
       servers.dub.push({
         id: Number($(item)?.attr("data-server-id")?.trim()) || null,
-        name: $(item).find("a").text().toLowerCase().trim(),
+        dataId: Number($(item).attr("data-id")) || null,
+        name: $(item).find("a").text().toLowerCase().trim() as HianimeServerName,
     });
     }
   );
@@ -49,7 +51,8 @@ export async function getHianimeEpisodeServers({
     (_, item) => {
       servers.raw.push({
         id: Number($(item)?.attr("data-server-id")?.trim()) || null,
-        name: $(item).find("a").text().toLowerCase().trim(),
+        dataId: Number($(item).attr("data-id")) || null,
+        name: $(item).find("a").text().toLowerCase().trim() as HianimeServerName,
       });
     }
   );

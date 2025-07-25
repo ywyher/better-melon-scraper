@@ -3,6 +3,7 @@ export type HianimeConfig = {
     base: string;
     search: string;
     watch: string;
-    ajax: string
+    ajax: string;
+    fallback: string;
   }
 }

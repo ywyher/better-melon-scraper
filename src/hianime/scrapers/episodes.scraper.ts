@@ -23,7 +23,7 @@ export async function getHianimeEpisodes({
       }
     ).json()
     const $ = load(content.html)
-  
+
     const episodes: HianimeAnimeEpisode[] = [];
   
     $('.detail-infor-content .ssl-item').each((_, item) => {

@@ -3,7 +3,10 @@ export type HianimeEpiosdeServersApiReponse = {
   html: string;
 }
 
+export type HianimeServerName = "hd-1" | "hd-2" | "hd-3"
+
 export type HianimeEpisodeServer = {
-  name: string;
   id: number | null;
+  dataId: number | null; // will be used to get streaming links later
+  name: HianimeServerName;
 }
